@@ -1,0 +1,30 @@
+def log(n,r):
+    m=0
+    while (n%r == 0):
+        n = n/r
+        m+=1
+    return m
+
+def is_anis(B):
+    C = 2*B
+    Q = QuadraticForm(QQ,C)
+    QD = Q.rational_diagonal_form()
+    QDM = QD.Gram_matrix()
+    
+    l=0
+    if (log(det(B),2)%2 == 0):
+        if ( (det(B)/(2^(log(det(B),2))))%8 == 1):
+            if Q.is_anisotropic(2):
+                l+=1
+            else:
+                l = l
+    else:
+        for q in xrange(3,-det(B)+1):
+            if is_prime(q) == True:
+                if (det(B)%q == 0):
+                    if Q.is_anisotropic(q):
+                        l+=1
+    if (l > 0):
+        return True
+    else:
+        return False
