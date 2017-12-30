@@ -1,0 +1,13 @@
+def qform(B):
+    C = 2*B
+    Q = QuadraticForm(ZZ, C)
+    return Q
+
+
+def is_equival(B,C):
+    Q1 = qform(B)
+    Q2 = qform(C)
+    if (Q1.is_locally_equivalent_to(Q2)):
+        return True
+    else:
+        return False
