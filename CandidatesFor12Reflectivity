@@ -14,10 +14,10 @@ import itertools
 from collections import OrderedDict
 
 #
-# Possible angles for proof of Main Theorem 1 after Propositions 3.1 and 3.2
+# Possible angles for Lorentzian lattices over Z
 #
 
-angles = [pi/2, pi/3, pi/4, pi/5]
+angles = [pi/2, pi/3, pi/4, pi/6]
 
 B = itertools.product(*[angles for i in range(5)])
 
