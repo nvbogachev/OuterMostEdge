@@ -49,18 +49,11 @@ for b in B:
         a4c = sqrt((1+a4)/2)
         
         A0 = tanh(ln(cot(b[0]/4)))
-        if (a1s == 0):
-            print 'FUCK0'
-        if (a1c == 0):
-            print 'FUCK1'
-        if (a2s == 0):
-            print 'FUCK2'
-        if (a2c == 0):
-            print 'FUCK3'
+
         lng1 = arcsinh(A0/(a1s/a1c)) + arcsinh(A0/(a2s/a2c))
         lng2 = arcsinh(A0/(a3s/a3c)) + arcsinh(A0/(a4s/a4c))
         
-        l = min(lng1,lng2)
+        l = max(lng1,lng2)
         
         T = var('T')
         eq = (- G1.det(A)/sqrt(abs(det(G2)*det(G3))) <= float(cosh(l)))
